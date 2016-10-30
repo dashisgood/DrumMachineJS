@@ -70,19 +70,19 @@ function playBeat(){
 	if (beat===15){
 		beat++;
 		bar++;
-		drawNewBar();
+		
 
 		return
 	}
 	if (beat===31){
 		beat = 0;
 		bar = 0;
-		drawNewBar();
+		
+		return
 
 	}
-	else{
-		beat++;
-	}
+	beat++;;
+
 	
 
 }
@@ -113,7 +113,7 @@ function drawNewBar(){
 			stepCounters[i].style.backgroundColor = 'grey'
 		}
 	}
-	barCounter.innerHTML = "Bar " + bar;
+	barCounter.innerHTML = "Bar " + (bar + 1) + "." + (beat-bar*16+1);
 }
 
 var hh = {
@@ -138,5 +138,5 @@ var beat = 0;
 
 var stepCounters = document.getElementsByClassName('step-counter');
 var barCounter = document.getElementById('bar-counter');
-barCounter.innerHTML = "Bar " + bar;
+drawNewBar();
 
