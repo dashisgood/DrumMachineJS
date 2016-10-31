@@ -116,6 +116,22 @@ function drawNewBar(){
 	barCounter.innerHTML = "Bar " + (bar + 1) + "." + (beat-bar*16+1);
 }
 
+function prevBar(){
+	console.log('prev');
+	if (bar>0){bar -= 1;}
+	beat = 0 + (bar*16);
+	drawNewBar();
+}
+
+function nextBar(){
+	console.log('next');
+	if (bar<(totalBars-1)){bar++;}
+	else if (bar===(totalBars-1)){bar=0;}
+	beat = 0 + (bar*16);
+	drawNewBar();	
+}
+
+
 var hh = {
 		"steps":[0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0, 0,0,0,0,], 
 		"sound": function(){playSound(allBuffers.hh);},
@@ -135,6 +151,7 @@ var bd = {
 var drums = [hh, sn, bd]
 var bar = 0;
 var beat = 0;
+var totalBars = 2;
 
 var stepCounters = document.getElementsByClassName('step-counter');
 var barCounter = document.getElementById('bar-counter');

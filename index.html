@@ -54,10 +54,14 @@ margin-top: 10%;
 
 
 
+<div id="main-control-panel" class="row">
+<h2 class="col-xs-6 pull-left"id='bar-counter' style="float:left;"></h2>
+<button type="button" class="col-xs-1 btn pull_right" onclick="prevBar()" style="float:left; margin:2%;"><span class="glyphicon glyphicon glyphicon-backward"></span></button>
 
-<h1 id='bar-counter'></h1>
+<button type="button" class="col-xs-1 btn pull_right" onclick="nextBar()" style="float:left; margin:2%;"><span class="glyphicon glyphicon glyphicon-forward"></span></button>
+</div>
 
-<div class="row">
+<div class="row" style="clear:left;">
 <div class="col-xs-10 drum">	
 <div class='step-button step-button-hh' onclick='toggleStep(0,0)'></div>
 <div class='step-button step-button-hh' onclick='toggleStep(0,1)'></div>
@@ -154,9 +158,9 @@ margin-top: 10%;
 <div class="row">
 	<div class="col-xs-4"></div>
 	<div class="col-xs-6">
-	<input type="button" value="Play" class="transport-control btn " onclick="playLoop()">
-	<input type="button" value="Pause" class="transport-control btn " onclick="pauseLoop()">
-	<input type="button" value="Stop" id="stop-btn" class="transport-control btn btn-danger" onclick="stopLoop()">
+	<button type="button" class="col-xs-1 btn pull_right" onclick="playLoop()" style="float:left; margin:2%;"><span class="glyphicon glyphicon-play"></span></button>
+	<button type="button" class="col-xs-1 btn pull_right" onclick="pauseLoop()" style="float:left; margin:2%;"><span class="glyphicon glyphicon-pause"></span></button>
+	<button type="button" class="col-xs-1 btn pull_right" onclick="stopLoop()" style="float:left; margin:2%;"><span class="glyphicon glyphicon-stop"></span></button>
 	</div>
 	<div class="col-xs-2"></div>
 </div>
